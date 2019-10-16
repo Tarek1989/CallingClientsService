@@ -85,7 +85,7 @@ Public Class JournalData
     Public Sub ConnectToDB(DataAccessLayerMethod As IEsoftDB.DataAccessLayerMethod, AccID As Integer, dataTableType As AccountDOA.DataTableType) Implements IEsoftDB.ConnectToDB
         Try
             Using _JournalDOAconnection
-                _JournalDOAconnection.ConnectionString = "Server=moebiussql.moebius.com.cy;Database=esoft;Trusted_Connection=true"
+                _JournalDOAconnection.ConnectionString = "Server=xxx;Database=xxx;Trusted_Connection=true"
                 _JournalDOAconnection.Open()
 
                 If _JournalDOAconnection.State = ConnectionState.Closed Then
