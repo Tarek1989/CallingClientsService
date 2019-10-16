@@ -31,8 +31,8 @@ Public Class InvokeEsoftService
 
     Private Async Function GetToken() As Task(Of AuthenticationRes)
 
-        'URL where token will be retrieve. Remember 192.168.10.9 is where esofwebapi is installed
-        client.BaseAddress = New Uri("http://192.168.10.9:12000/EsoftwebAPI/api/token")
+        
+        client.BaseAddress = New Uri("http://IPAddress:Port/xxx/api/token")
         client.DefaultRequestHeaders.Accept.Clear()
 
         Dim res As AuthenticationRes = New AuthenticationRes()
@@ -56,7 +56,7 @@ Public Class InvokeEsoftService
         client.DefaultRequestHeaders.Authorization = New AuthenticationHeaderValue("bearer", token)
         Dim Res As New MsgControl
 
-        Dim response As HttpResponseMessage = Await client.PostAsync("http://192.168.10.9:12000/EsoftwebAPI/api/AccAccounts", New StringContent(PostAcc, Encoding.UTF8, "application/json"))
+        Dim response As HttpResponseMessage = Await client.PostAsync("http://IPAddress:Port/xxx/api/AccAccounts", New StringContent(PostAcc, Encoding.UTF8, "application/json"))
         If response.IsSuccessStatusCode Then
             'Reading response in regards to account properties.
             Res = Await response.Content.ReadAsAsync(Of MsgControl)()
@@ -69,7 +69,7 @@ Public Class InvokeEsoftService
         client.DefaultRequestHeaders.Authorization = New AuthenticationHeaderValue("bearer", token)
         Dim Res As New MsgControl
 
-        Dim response As HttpResponseMessage = Await client.PostAsync("http://192.168.10.9:12000/EsoftwebAPI/api/AccTrans", New StringContent(PostJournal, Encoding.UTF8, "application/json"))
+        Dim response As HttpResponseMessage = Await client.PostAsync("http://IPAddress:Port/xxx/api/AccTrans", New StringContent(PostJournal, Encoding.UTF8, "application/json"))
         If response.IsSuccessStatusCode Then
             'Reading response in regards to account properties.
             Res = Await response.Content.ReadAsAsync(Of MsgControl)()
