@@ -57,7 +57,7 @@ Public Class AccData
     Public Sub ConnectToDB(DataAccessLayerMethod As IEsoftDB.DataAccessLayerMethod, AccID As Integer, dataTableType As DataTableType) Implements IEsoftDB.ConnectToDB
         Try
             Using _accountDOAconnection
-                _accountDOAconnection.ConnectionString = "Server=moebiussql.moebius.com.cy;Database=esoft;Trusted_Connection=true"
+                _accountDOAconnection.ConnectionString = "Server=xxxx;Database=xxxx;Trusted_Connection=true"
                 _accountDOAconnection.Open()
 
                 If _accountDOAconnection.State = ConnectionState.Closed Then
